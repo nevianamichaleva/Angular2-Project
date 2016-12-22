@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Намери учебник:</span>
+    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+    <label for="sort">Сортирай:</label>
+    <select class="form-control" name="sort">
+        <option>sorting options</option>
+    </select>
+</div>
+<div class="input-group">
+    <label for="order">Подреди:</label>
+    <select class="form-control" name="order">
+        <option>ordering options</option>
+    </select>
+</div>
+<app-announcements-list></app-announcements-list>
