@@ -1,14 +1,13 @@
-<table class="text-center">
-    <tbody>
-        <div *ngFor="let ad of ads">
-            <tr *ngFor="let userads of ad.announcement">
-                <td>{{ad.username}}
-                    <td><img src="{{userads.images}}" alt="userads.title"></td>
-                    <td>{{userads.title}}</td>
-                    <td>{{userads.publisher}}</td>
-                    <td>{{userads.year}}</td>
-
-            </tr>
+<div>
+    <h2>Последно добавени обяви</h2>
+    <div *ngFor="let ad of ads">
+        <div class="col-md-3" *ngFor="let userads of ad.announcement">
+            <img src="{{userads.image}}" alt="{{userads.title}}">
+            <p><strong>{{userads.title}}</strong> за {{userads.class}} клас</p>
+            <p name="username">Публикувано от: {{ad.username}}</p>
+            <p name="publisher">Издателство: {{userads.publisher}}</p>
+            <p name="year">Година на издаване: {{userads.year}}</p>
+            <p><a class="btn btn-default" href="#" role="button">Виж повече &raquo;</a></p>
         </div>
-    </tbody>
-</table>
+    </div>
+</div>
