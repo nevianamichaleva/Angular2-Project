@@ -7,7 +7,7 @@ import { DetailComponent } from '../detail/detail.component';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 const routes: Routes = [
-  
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
   { path: 'home',  component: HomeComponent },
   { path: 'detail/:userid', component: UserDetailComponent },
   { path: 'login', component: LoginComponent }
