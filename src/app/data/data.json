@@ -1,7 +1,9 @@
 [{
         "username": "Maria",
         "password": "123456",
+        "id": 1,
         "announcement": [{
+                "adId": 11,
                 "title": "География",
                 "category": "продавам",
                 "publisher": "Arhimed",
@@ -18,6 +20,7 @@
                 }]
             },
             {
+                "adId": 12,
                 "title": "Istoria",
                 "category": "продавам",
                 "publisher": "Arhimed",
@@ -42,7 +45,9 @@
     {
         "username": "Stoian",
         "password": "123456",
+        "id": 2,
         "announcement": [{
+                "adId": 21,
                 "title": "Matematika",
                 "category": "продавам",
                 "publisher": "Arhimed",
@@ -59,6 +64,7 @@
                 }]
             },
             {
+                "adId": 22,
                 "title": "Fizika",
                 "category": "продавам",
                 "publisher": "Arhimed",
@@ -68,6 +74,52 @@
                 "condition": "izpolzvan",
                 "description": "mnogo hubav",
                 "image": "http://www.bookvoed.ru/files/1377/64/72/9.jpg",
+                "user": { "name": "Maria", "city": "Varna", "email": "ns@abv.bg", "skype": "mimito", "phone": "123456" },
+                "messages": [{
+                    "username": "Mitko",
+                    "text": "zdrasti, shte mi go dadesh li za 2 lv?"
+                }]
+            }
+        ],
+        "usermessages": [{
+            "username": "Misho",
+            "text": "Messages without announcement"
+        }]
+    },
+    {
+        "username": "Ivan",
+        "password": "123456",
+        "id": 3,
+        "announcement": [{
+                "adId": 31,
+                "title": "Математика",
+                "category": "продавам",
+                "publisher": "Биовет",
+                "class": "12",
+                "year": "2015",
+                "price": "3.50",
+                "condition": "izpolzvan",
+                "description": "mnoho hubav",
+                "authors": ["Марина Маринова"],
+                "image": "http://baumanpress.ru/books/61/61b.jpg",
+                "user": { "name": "Maria", "city": "Varna", "email": "ns@abv.bg", "skype": "mimito", "phone": "123456" },
+                "messages": [{
+                    "username": "Misho",
+                    "text": "zdrasti, shte mi go dadesh li za 2 lv?"
+                }]
+            },
+            {
+                "adId": 32,
+                "title": "Химия",
+                "category": "продавам",
+                "publisher": "Булвест",
+                "class": "11",
+                "year": "2015",
+                "price": "3.50",
+                "condition": "izpolzvan",
+                "description": "mnogo hubav",
+                "authors": ["Петко Маринов"],
+                "image": "http://zubrila.net/upload/iblock/690/690e3e0ceb789522859bedfb92f090af.jpg",
                 "user": { "name": "Maria", "city": "Varna", "email": "ns@abv.bg", "skype": "mimito", "phone": "123456" },
                 "messages": [{
                     "username": "Mitko",

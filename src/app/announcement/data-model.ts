@@ -1,7 +1,9 @@
 export class DataModel {
     username: string
     password:  string
+    id: number
     announcement: [{
+             adId: number
              title:  string
              class: string
              category:  string

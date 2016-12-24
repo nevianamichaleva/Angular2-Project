@@ -21,7 +21,7 @@ export class AnnouncementsListComponent implements OnInit {
   getAd() {
     this.announcementService.getAnnouncements()
                      .subscribe(
-                       ads => this.ads = ads,
+                     ads => this.ads = ads,
                        error =>  this.errorMessage = <any>error);
   }
 }
