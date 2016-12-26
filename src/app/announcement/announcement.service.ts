@@ -1,37 +1,29 @@
-import { Injectable } from '@angular/core'
-import {  Headers, Http, Response } from '@angular/http';
-import { DataModel } from '../announcement/data-model';
-import {Observable} from 'rxjs/Rx';
+import * as Rx from 'rxjs/rx';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { Notice } from './../shared/model/notice-model';
+import {Injectable, Inject} from '@angular/core';
+import {AngularFireDatabase, FirebaseRef} from "angularfire2";
+import {Http} from "@angular/http";
+import {firebaseConfig} from "../environments/firebase.config";
 
 
 @Injectable()
-
 export class AnnouncementService {
-    private dataUrl = 'app/data/data.json';
-    constructor (private http: Http) {}
 
-    getAnnouncements() : Observable<DataModel[]> {
-        return this.http.get(this.dataUrl)
-            .map(this.extractData)
-            .catch(this.handleError);
+    sdkDb:any;
+
+    constructor(private db:AngularFireDatabase, @Inject(FirebaseRef) fb,
+                private http:Http) {
+
+        this.sdkDb = fb.database().ref();
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body || {};
-    }
+    findAllNotices():Observable<Notice[]> {
+        return this.db.list('notices');  
+    }   
 
-    private handleError(error: Response | any) {
-        let errMsg: string;
-        if (error instanceof Response) {
-            const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-        } else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return Observable.throw(errMsg);
-    }
-        
+    
+
 }

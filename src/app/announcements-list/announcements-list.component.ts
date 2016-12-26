@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnnouncementService } from '../announcement/announcement.service'
-import { DataModel } from '../announcement/data-model'
+import { Notice } from '../shared/model/notice-model'
 
 @Component({
   selector: 'app-announcements-list',
@@ -9,19 +9,13 @@ import { DataModel } from '../announcement/data-model'
   providers: [AnnouncementService],
 })
 export class AnnouncementsListComponent implements OnInit {
-  private errorMessage: string;
-  mode = 'Observable';
-  private ads: DataModel[];
-
+  notices: Notice[];
   constructor(private announcementService: AnnouncementService) { }
 
   ngOnInit() {
-    this.getAd()
+    this.announcementService.findAllNotices()
+    .subscribe(notices => this.notices = notices);
+    
   }
-  getAd() {
-    this.announcementService.getAnnouncements()
-                     .subscribe(
-                     ads => this.ads = ads,
-                       error =>  this.errorMessage = <any>error);
-  }
+  
 }
